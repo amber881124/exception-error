@@ -23,6 +23,13 @@ except FileNotFoundError as err:
 except ValueError as err:
     print(err)
     # invalid literal for int() with base 10: '嗨'
+else:
+    print('great! 都沒有發生錯誤')
+finally:
+    print('in finally')
+
+
+
 
 
 
