@@ -17,12 +17,15 @@ try:
     with open('file.txt','r') as f:
         for line in f:
             int(line.strip())
-except FileNotFoundError:
-    print('File not found!')
-except ValueError:
-    print('Could not convert to int')
+except FileNotFoundError as err:
+    print(err)
+    # [Errno 2] No such file or directory: 'file.txt'
+except ValueError as err:
+    print(err)
+    # invalid literal for int() with base 10: '嗨'
 
-    
+
+
 
 
 
