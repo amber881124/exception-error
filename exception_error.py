@@ -28,6 +28,20 @@
 # finally:
 #     print('in finally')
 
+# 沒有此檔案
+# [Errno 2] No such file or directory: 'file.txt'
+# in finally
+
+# 檔案內容不能轉int
+# invalid literal for int() with base 10: '嗨'
+# in finally
+
+# 沒有發生任何錯誤
+# great! 都沒有發生錯誤
+# in finally
+
+
+
 count = 0
 while True:
     try:
@@ -42,7 +56,16 @@ while True:
         else:
             print('已輸入錯誤三次，不給輸入了')
             break
-
+# please enter a number: 55
+# great! you entered 55
+# please enter a number: q
+# 已輸入錯誤1次
+# caught an ValueError : invalid literal for int() with base 10: 'q'
+# please enter a number: t
+# 已輸入錯誤2次
+# caught an ValueError : invalid literal for int() with base 10: 't'
+# please enter a number: y
+# 已輸入錯誤三次，不給輸入了
 
 
 
