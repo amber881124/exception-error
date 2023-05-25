@@ -41,33 +41,38 @@
 # in finally
 
 
-
-count = 0
+i = 0
+count_err = 0
 while True:
+    i += 1
     try:
         num = input('please enter a number: ')
         num = int(num)
         print(f'great! you entered {num}')
     except ValueError as err:
-        count += 1
-        if count < 3:
-            print(f'已輸入錯誤{count}次')
+        count_err += 1
+        if count_err < 3:
+            print(f'已輸入錯誤{count_err}次')
             print(f'caught an ValueError : {err}')
         else:
             print('已輸入錯誤三次，不給輸入了')
             break
-# please enter a number: 55
-# great! you entered 55
-# please enter a number: q
-# 已輸入錯誤1次
-# caught an ValueError : invalid literal for int() with base 10: 'q'
-# please enter a number: t
-# 已輸入錯誤2次
-# caught an ValueError : invalid literal for int() with base 10: 't'
+    # 鍵盤按ctrl+c強制終止會發生KeyboardInterrupt錯誤
+    except KeyboardInterrupt:
+        print(f'ctrl+c遊戲終止')
+        break
+    finally:
+        print(f'這是第{i}次玩')
+
+# please enter a number: 6
+# great! you entered 6
+# 這是第1次玩
 # please enter a number: y
-# 已輸入錯誤三次，不給輸入了
-
-
+# 已輸入錯誤1次
+# caught an ValueError : invalid literal for int() with base 10: 'y'
+# 這是第2次玩
+# please enter a number: 遊戲終止
+# 這是第3次玩Z
 
 
 
